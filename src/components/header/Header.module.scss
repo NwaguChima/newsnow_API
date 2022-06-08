@@ -1,0 +1,17 @@
+@use "../../globalStyles/variables.scss" as varr;
+
+.header {
+  height: 7rem;
+  width: 100%;
+  background-color: varr.$header__backg;
+  display: flex;
+  align-items: center;
+  padding-left: varr.$main__padding;
+
+  h1 {
+    font-size: 2.5rem;
+    color: varr.$main__backg;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+}
