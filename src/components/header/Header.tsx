@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 
 interface HeaderProps {}
 
-export const Header: React.FC<HeaderProps> = ({}) => {
+export const Header: React.FC<HeaderProps> = () => {
   useEffect(() => {
     document.title = "NewsOnline - Home";
   }, []);

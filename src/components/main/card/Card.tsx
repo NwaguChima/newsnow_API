@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Card.module.scss";
 import { AiOutlineStar } from "react-icons/ai";
+import { INews } from "../../../utils/types";
 
-interface CardProps {}
+interface CardProps {
+  article: INews;
+}
 
-export const Card: React.FC<CardProps> = () => {
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(6);
-
+export const Card: React.FC<CardProps> = ({ article }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__header}>
-        <h4>Presidency approves minimum wage</h4>
+        <h4>{article.title}</h4>
       </div>
-      <p className={styles.card__body}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        molestiae voluptates sit vel voluptatum, a tempora voluptatibus saepe
-        error ipsa. Quibusdam suscipit quo odio nostrum cumque incidunt
-        veritatis facere veniam.
-      </p>
+      <p className={styles.card__body}>{article.description}</p>
       <div className={styles.card__footer}>
-        <a href="#">Read full story</a>
+        <a href={article.url} target="_blank" rel="noreferrer">
+          Read full story
+        </a>
         <span>
           <i>
             <AiOutlineStar />
