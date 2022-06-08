@@ -5,18 +5,10 @@ type GlobalContextProviderProps = {
 };
 
 type GlobalContextType = {
-  // dropDown: boolean;
-  // setDropDown: React.Dispatch<React.SetStateAction<boolean>>;
-  // showMovies: boolean;
-  // setShowMovies: React.Dispatch<React.SetStateAction<boolean>>;
-  // showModal: boolean;
-  // setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  // movie: IMovies | undefined;
-  // setMovie: React.Dispatch<React.SetStateAction<IMovies | undefined>>;
-  // characters: ICharacter[] | undefined;
-  // setCharacters: React.Dispatch<React.SetStateAction<ICharacter[] | undefined>>;
-  // error: string;
-  // setError: React.Dispatch<React.SetStateAction<string>>;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  pageSize: number;
+  setPageSize: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const GlobalContext = createContext<GlobalContextType | null>(null);
@@ -24,31 +16,17 @@ const GlobalContext = createContext<GlobalContextType | null>(null);
 export const GlobalContextProvider = ({
   children,
 }: GlobalContextProviderProps) => {
-  // const [dropDown, setDropDown] = useState<boolean>(false);
-  // const [showModal, setShowModal] = useState<boolean>(false);
-  // const [showMovies, setShowMovies] = useState<boolean>(false);
-  // const [movie, setMovie] = useState<IMovies | undefined>();
-  // const [characters, setCharacters] = useState<ICharacter[] | undefined>();
-  // const [error, setError] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(6);
 
   return (
     <GlobalContext.Provider
-      value={
-        {
-          // dropDown,
-          // setDropDown,
-          // showMovies,
-          // setShowMovies,
-          // showModal,
-          // setShowModal,
-          // movie,
-          // setMovie,
-          // characters,
-          // setCharacters,
-          // error,
-          // setError,
-        }
-      }
+      value={{
+        page,
+        setPage,
+        pageSize,
+        setPageSize,
+      }}
     >
       {children}
     </GlobalContext.Provider>
