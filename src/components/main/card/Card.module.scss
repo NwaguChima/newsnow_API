@@ -1,0 +1,47 @@
+@use "../../../globalStyles/variables.scss" as varr;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: varr.$white__backg;
+  min-height: 25rem;
+  box-shadow: varr.$box_shadow;
+
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+
+  &__header {
+    border-bottom: 1.5px solid rgba(119, 119, 119, 0.488);
+    padding: 2.5rem 3rem;
+
+    h4 {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+
+  &__body {
+    padding: 3rem;
+  }
+
+  &__footer {
+    padding: 0 3rem 2.5rem 3rem;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      color: varr.$header__backg;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

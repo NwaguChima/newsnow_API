@@ -1,0 +1,34 @@
+@use "../../globalStyles/variables.scss" as varr;
+
+.main {
+  padding-left: varr.$main__padding;
+  padding-right: varr.$main__padding;
+  padding-top: 4rem;
+
+  h2 {
+    color: varr.$header__backg;
+    font-size: 2rem;
+    font-weight: varr.$font__wight;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(179, 179, 179);
+  }
+
+  &__container {
+    padding: 6rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+  @media screen and (max-width: 500px) {
+    &__container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
